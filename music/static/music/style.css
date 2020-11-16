@@ -1,6 +1,6 @@
 body {
     
-    background: url("images/background.jpg");
+    background: url("images/Abstract-Envelope.svg");
     
     height: 100%; 
 
@@ -38,4 +38,13 @@ ul.errorlist > li {
 
 .glyphicon-star.active {
     color: #FDB230;
+}
+.container-fluid > .navbar-collapse, .container-fluid > .navbar-header, .container > .navbar-collapse, .container > .navbar-header {
+    margin-right: 135px;
+    margin-left: 90px;
+    padding: 15px;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
+    color: #fff;
+    background-color: #60464e;
 }

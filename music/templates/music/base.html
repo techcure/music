@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}My music{% endblock %}</title>
+    <title>{% block title %}Music{% endblock %}</title>
     {% load static %}
     <link rel="shortcut icon" type="image/png" href="{%  static 'favicon.ico' %}"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -24,21 +24,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{% url 'music:index' %}">My music</a>
+            <a class="navbar-brand" href="{% url 'music:index' %}">...</a>
         </div>
 
         <!-- Items -->
         <div class="collapse navbar-collapse" id="topNavBar">
             <ul class="nav navbar-nav">
-                <li class="{% block albums_active %}{% endblock %}"><a href="{% url 'music:index' %}"><span class="glyphicon glyphicon-cd" aria-hidden="true"></span>&nbsp; Albums</a></li>
-                <li class="{% block songs_active %}{% endblock %}"><a href="{% url 'music:songs' 'all' %}"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>&nbsp; Songs</a></li>
+                <li class="{% block albums_active %}{% endblock %}"><a href="{% url 'music:index' %}"><span class="glyphicon glyphicon-cd" aria-hidden="true"></span>&nbsp; ALBUMS</a></li>
+                <li class="{% block songs_active %}{% endblock %}"><a href="{% url 'music:songs' 'all' %}"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>&nbsp; SONGS</a></li>
             </ul>
-            <form class="navbar-form navbar-left" role="search" method="get" action="{% url 'music:index' %}">
-                <div class="form-group">
-                    <input type="text" class="form-control" name="q" value="{{ request.GET.q }}">
-                </div>
-                <button type="submit" class="btn btn-default">Search</button>
-            </form>
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="{% url 'music:create_album' %}">
@@ -54,8 +48,18 @@
         </div>
 
     </div>
-</nav>
+</nav> <div class="container-fluid">
+            <form class="navbar-form navbar-left" role="search" method="get" action="{% url 'music:index' %}">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="q" value="{{ request.GET.q }}">
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
+            </form>
+        </div>
 {% block body %}
 {% endblock %}
 </body>
+{% block content %}
+{% include 'music/footer.html' %}
+{% endblock %}
 </html>
