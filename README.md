@@ -67,7 +67,4 @@ python manage.py makemigrations
 python manage.py migrate 
 python manage.py runserver
 ```
-You can use *showmigration*  to list projects migration.
-### Have Fun ! 
-
-   
+### Good Luck !
