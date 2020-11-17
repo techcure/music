@@ -48,3 +48,8 @@ ul.errorlist > li {
     color: #fff;
     background-color: #60464e;
 }
+.panel-body {
+    padding: 15px;
+    align-content: center;
+    background-color: #c69a9a;
+}
